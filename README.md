@@ -1,8 +1,6 @@
 # Tarefas Projeção - Backend
 
-Este é o repositório do backend do projeto **Tarefas Projeção**, um sistema para organização de tarefas estudantis entre estudantes da UniProjeção. Foi desenvolvido em **Java com Spring Boot**, usando **MySQL** como banco de dados.
-
----
+Este é o repositório do backend do projeto **Tarefas Projeção**, um sistema para organização de tarefas estudantis. Foi desenvolvido em **Java com Spring Boot**, usando **MySQL** como banco de dados.
 
 ## Instalação e execução
 
@@ -29,8 +27,6 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
 
 mvn clean install
 mvn spring-boot:run
-
----
 
 ## Endpoints da API
 
@@ -62,16 +58,12 @@ A documentação da API gerada automaticamente pode ser acessada através do Swa
 
 http://localhost:8080/swagger-ui/index.html
 
----
-
 ## Entidades principais
 
 - **Usuário** (Estudante ou Professor)  
 - **Tarefa**  
 - **Disciplina**  
 - **Curso**
-
----
 
 ## Autora
 
