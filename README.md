@@ -69,6 +69,14 @@ http://localhost:8080/swagger-ui/index.html
 - **Disciplina**  
 - **Curso**
 
+## Diagramas UML
+
+Abaixo estão os links para os diagramas do projeto hospedados no Google Drive:
+
+1. [Diagrama de Classes](https://drive.google.com/file/d/16VBlpcDVnOqG2i5MBKWSxDTCjVE-Vvym/view?usp=sharing)  
+2. [Diagrama Físico](https://drive.google.com/file/d/1zUaGAI18bS0p36HumA5XJ4JOQx_JPz_j/view?usp=sharing)  
+3. [Diagrama Conceitual](https://drive.google.com/file/d/1zUaGAI18bS0p36HumA5XJ4JOQx_JPz_j/view?usp=drive_link)  
+
 ## Autora
 
 Desenvolvido por [@carolainevasconcelos](https://github.com/carolainevasconcelos) 
