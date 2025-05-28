@@ -1,9 +1,10 @@
+// src/main/java/com/fab/tarefasbackend/entidade/Tarefa.java
 package com.fab.tarefasbackend.entidade;
 
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.time.LocalDate; // Importar LocalDate
 
 @Table(name = "tarefa")
 @Entity(name = "tarefa")
@@ -20,7 +21,7 @@ public class Tarefa {
 
     private String titulo;
     private String descricao;
-    private Date prazo;
+    private LocalDate prazo; // Tipo alterado
 
     @Enumerated(EnumType.STRING)
     private StatusTarefa status;

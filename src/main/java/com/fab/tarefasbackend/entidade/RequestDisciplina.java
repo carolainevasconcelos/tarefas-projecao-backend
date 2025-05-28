@@ -1,4 +1,12 @@
 package com.fab.tarefasbackend.entidade;
 
-public record RequestDisciplina(int id, String nome, String professorNome, String horario, int cursoId) {
+import jakarta.validation.constraints.NotNull;
+
+public record RequestDisciplina(
+        Integer id,
+        @NotNull String nome,
+        @NotNull String professorNome,
+        @NotNull String horario,
+        @NotNull Integer cursoId
+) {
 }

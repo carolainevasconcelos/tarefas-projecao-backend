@@ -12,18 +12,25 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuario")
-@CrossOrigin(origins = "*")
 @Tag(name = "Usuário", description = "Endpoints para gerenciamento de usuários")
 public class UsuarioControle {
 
     @Autowired
     private UsuarioRepositorio repositorio;
 
-    @GetMapping
+    @GetMapping // Endpoint para listar todos
     @Operation(summary = "Listar todos os usuários")
-    public ResponseEntity getUsuarioById() {
+    public ResponseEntity<Iterable<Usuario>> getUsuarios() {
         var allUsuario = repositorio.findAll();
         return ResponseEntity.ok(allUsuario);
+    }
+
+    @GetMapping("/{id}") // Novo endpoint para buscar por ID
+    @Operation(summary = "Buscar usuário por ID")
+    public ResponseEntity<Usuario> getUsuarioById(@PathVariable int id) {
+        return repositorio.findById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -42,6 +49,9 @@ public class UsuarioControle {
     @PutMapping
     @Operation(summary = "Editar dados de um usuário")
     public ResponseEntity editarUsuario(@RequestBody @Valid RequestUsuario data) {
+        if (!repositorio.existsById(data.id())) {
+            return ResponseEntity.notFound().build();
+        }
         Usuario usuario = repositorio.getReferenceById(data.id());
         usuario.setNome(data.nome());
         usuario.setCpf(data.cpf());
